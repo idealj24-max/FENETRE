@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="FENÊTRE - Le monde à travers une fenêtre.">
+  <title>FENÊTRE — Le monde à travers une fenêtre</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">FENÊTRE<span>.</span></div>
+    <div class="top-actions">
+      <button id="searchButton" aria-label="Rechercher">⌕</button>
+      <button id="inboxButton" aria-label="Messages">✉</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="feedPage" class="page active">
+      <nav class="feed-tabs">
+        <button class="feed-tab active" data-feed="foryou">Pour toi</button>
+        <button class="feed-tab" data-feed="following">Abonnements</button>
+        <button class="feed-tab" data-feed="live">En direct</button>
+      </nav>
+
+      <div id="videoFeed" class="video-feed">
+        <article class="video-card">
+          <div class="video-background gradient-one">
+            <div class="video-placeholder">
+              <span class="play-symbol">▶</span>
+              <p>Bienvenue sur FENÊTRE</p>
+              <small>Le monde à travers une fenêtre.</small>
+            </div>
+            <div class="video-info">
+              <strong>@fenetre_officiel</strong>
+              <p>Bienvenue dans une nouvelle génération de partage ! 🌍</p>
+              <span>#Fenetre #Bienvenue #Communauté</span>
+            </div>
+          </div>
+
+          <aside class="video-actions">
+            <button class="avatar" aria-label="Profil">F</button>
+            <button class="like-button" data-count="0">♡<small>0</small></button>
+            <button class="comment-button">▢<small>Commenter</small></button>
+            <button class="share-button">↗<small>Partager</small></button>
+            <button class="more-button">•••</button>
+          </aside>
+        </article>
+      </div>
+    </section>
+
+    <section id="livePage" class="page">
+      <h2>FENÊTRE LIVE</h2>
+      <p class="muted">Découvre les diffusions en direct.</p>
+      <div class="empty-state">
+        <div class="empty-icon">◉</div>
+        <h3>Les lives arrivent !</h3>
+        <p>Nous préparons ton espace de diffusion en direct.</p>
+      </div>
+      <button class="primary-button" id="startLiveButton">
+        Démarrer un LIVE
+      </button>
+    </section>
+
+    <section id="createPage" class="page">
+      <h2>Créer une publication</h2>
+      <p class="muted">Partage ton univers avec le monde.</p>
+
+      <label class="upload-area" for="videoInput">
+        <span class="upload-icon">＋</span>
+        <strong>Choisir une vidéo</strong>
+        <small>MP4, MOV ou WebM</small>
+      </label>
+
+      <input type="file" id="videoInput" accept="video/*" hidden>
+
+      <video id="videoPreview" controls hidden></video>
+
+      <textarea id="videoCaption"
+        placeholder="Écris une légende..."></textarea>
+
+      <button id="publishButton" class="primary-button">
+        Publier ma vidéo
+      </button>
+      <p id="uploadMessage" class="muted"></p>
+    </section>
+
+    <section id="inboxPage" class="page">
+      <h2>Messages</h2>
+      <div class="empty-state">
+        <div class="empty-icon">✉</div>
+        <h3>Ta messagerie</h3>
+        <p>Les conversations seront bientôt disponibles.</p>
+      </div>
+    </section>
+
+    <section id="profilePage" class="page">
+      <div class="profile-header">
+        <div class="profile-avatar">F</div>
+        <h2>Mon profil</h2>
+        <p class="muted">@nouveau_createur</p>
+      </div>
+
+      <div class="profile-stats">
+        <div><strong>0</strong><small>Abonnements</small></div>
+        <div><strong>0</strong><small>Abonnés</small></div>
+        <div><strong>0</strong><small>J'aime</small></div>
+      </div>
+
+      <div class="profile-menu">
+        <button>Modifier mon profil →</button>
+        <button>Mon portefeuille →</button>
+        <button>Centre des créateurs →</button>
+        <button>Paramètres →</button>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-button active" data-page="feedPage">
+      <span>⌂</span><small>Accueil</small>
+    </button>
+    <button class="nav-button" data-page="livePage">
+      <span>◉</span><small>LIVE</small>
+    </button>
+    <button class="create-button" data-page="createPage">
+      <span>＋</span>
+    </button>
+    <button class="nav-button" data-page="inboxPage">
+      <span>✉</span><small>Messages</small>
+    </button>
+    <button class="nav-button" data-page="profilePage">
+      <span>◎</span><small>Profil</small>
+    </button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
