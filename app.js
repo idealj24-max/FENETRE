@@ -157,3 +157,23 @@ document.addEventListener("click", event => {
 });
 
 console.log("FENÊTRE v1.0 - Interface initialisée.");
+
+
+// Installation du service worker FENÊTRE
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(registration => {
+        console.log(
+          "FENÊTRE : application prête",
+          registration.scope
+        );
+      })
+      .catch(error => {
+        console.error(
+          "Erreur de démarrage PWA :",
+          error
+        );
+      });
+  });
+}
